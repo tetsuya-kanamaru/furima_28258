@@ -25,7 +25,7 @@
 | --------------------- | ------------- | ------------------------------ |
 | user                  | references    | null: false, foreign_key: true |
 | image                 | text          | null: false                    |
-| item_name             | string        | null: false                    |
+| name                  | string        | null: false                    |
 | item_description      | text          | null: false                    |
 | category              | integer       | null: false                    |
 | item_condition        | integer       | null: false                    |
