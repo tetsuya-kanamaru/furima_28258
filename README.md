@@ -62,7 +62,7 @@
 | city                  | string        | default: "", null: false       |
 | house_number          | string        | default: "", null: false       |
 | building_name         | string        | default: ""                    |
-| phone_number          | integer       | default: "", null: false       |
+| phone_number          | string        | default: "", null: false       |
 
 ### Association
 
