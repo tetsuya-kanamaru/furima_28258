@@ -13,8 +13,6 @@
 | family_name_reading   | string        | null: false                   |
 | given_name_reading    | string        | null: false                   |
 | birthday              | date          | null: false                   |
-| birth_month           | integer       | null: false                   |
-| birth_date            | integer       | null: false                   |
 
 ### Association
 - has_many :items
