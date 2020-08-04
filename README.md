@@ -23,7 +23,7 @@
 
 | Column                | type          | Option                         |
 | --------------------- | ------------- | ------------------------------ |
-| user_id               | references    | null: false, foreign_key: true |
+| user                  | references    | null: false, foreign_key: true |
 | image                 | text          | null: false                    |
 | item_name             | string        | null: false                    |
 | item_description      | text          | null: false                    |
@@ -43,8 +43,8 @@
 
 | Column                | type          | Option                         |
 | --------------------- | ------------- | ------------------------------ |
-| user_id               | references    | null: false, foreign_key: true |
-| item_id               | references    | null: false, foreign_key: true |
+| user                  | references    | null: false, foreign_key: true |
+| item                  | references    | null: false, foreign_key: true |
 
 ### Association
 - belongs_to :user
@@ -55,7 +55,7 @@
 
 | Column                | type          | Option                         |
 | --------------------- | ------------- | ------------------------------ |
-| user_id               | references    | null: false, foreign_key: true |
+| user                  | references    | null: false, foreign_key: true |
 | postal_code           | string        | default: "", null: false       |
 | prefecture            | integer       | null: false                    |
 | city                  | string        | default: "", null: false       |
@@ -71,7 +71,7 @@
 
 | Column                | type          | Option                         |
 | --------------------- | ------------- | ------------------------------ |
-| user_id               | references    | null: false, foreign_key: true |
+| user                  | references    | null: false, foreign_key: true |
 
 ### Association
 
