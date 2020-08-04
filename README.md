@@ -38,6 +38,7 @@
 - belongs_to :user
 - has_many :comments
 - has_one :address
+- has_one :purchase
 
 ## Commentsテーブル
 
@@ -66,7 +67,6 @@
 ### Association
 
 - belongs_to :user
-- has_one :purshase
 
 ## Purchaseテーブル
 
