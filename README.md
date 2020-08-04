@@ -12,7 +12,7 @@
 | given_name            | string        | null: false                   |
 | family_name_reading   | string        | null: false                   |
 | given_name_reading    | string        | null: false                   |
-| birth_year            | integer       | null: false                   |
+| birthday              | date          | null: false                   |
 | birth_month           | integer       | null: false                   |
 | birth_date            | integer       | null: false                   |
 
