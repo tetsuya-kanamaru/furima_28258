@@ -11,9 +11,8 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :email, uniqueness: true
-    validates :password, length: {minimum: 6}, format: {with: VALID_PASSWORD_REGEX}
-    validates :password_confirmation, length: {minimum: 6}, format: {with: VALID_PASSWORD_REGEX}
+    # password_confirmationはログイン項目にないため削除
+    # validates :password_confirmation, length: {minimum: 6}, format: {with: VALID_PASSWORD_REGEX}
     validates :family_name, format: {with: VALID_NAME_REGEX}
     validates :given_name, format: {with: VALID_NAME_REGEX}
     validates :family_name_reading, format: {with: VALID_FURIGANA_REGEX}
@@ -21,8 +20,12 @@ class User < ApplicationRecord
     validates :birthday
   end
 
+  validates :email, uniqueness: { case_sensitive: true }
+  validates :password, length: {minimum: 6}, format: {with: VALID_PASSWORD_REGEX}
+
   has_many :items
   has_many :comments
   has_many :purchases
 
 end
+
