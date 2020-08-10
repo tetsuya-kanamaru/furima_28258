@@ -1,6 +1,7 @@
 class Item < ApplicationRecord
 
 with_options presence: true do
+  validates :image
   validates :name
   validates :item_description
   validates :category_id
@@ -15,5 +16,6 @@ belongs_to :user
 has_many :comments
 has_one :address
 has_one :purchase
+has_one_attached :image
 
 end
