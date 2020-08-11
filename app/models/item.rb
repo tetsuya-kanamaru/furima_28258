@@ -15,7 +15,7 @@ end
 belongs_to :user
 has_many :comments
 has_one :address
-has_one :purchase, class_name: 'Purchase'
+has_one :deal, class_name: 'Transaction'
 has_one_attached :image
 
 extend ActiveHash::Associations::ActiveRecordExtensions
