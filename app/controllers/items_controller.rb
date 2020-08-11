@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
-  before_action :move_to_login, only: [:new, :create]
-  before_action :item_information, only: [:show]
+  before_action :move_to_login, only: [:new, :create, :edit, :update]
+  before_action :item_information, only: [:show, :edit, :update]
 
   def index
     @items = Item.all.order("created_at DESC")
@@ -22,6 +22,18 @@ class ItemsController < ApplicationController
   def show
   end
 
+  def edit
+    redirect_to root_path unless current_user.id == @item.user_id
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def item_params
@@ -29,7 +41,10 @@ class ItemsController < ApplicationController
   end
 
   def move_to_login
-    redirect_to new_user_session_path unless user_signed_in?
+    unless user_signed_in?
+      flash[:alert] = 'ログイン、または新規登録をしましょう！'
+      redirect_to new_user_session_path
+    end
   end
 
   def item_information
