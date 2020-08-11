@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_login, only: [:new, :create, :edit]
-  before_action :item_information, only: [:show, :edit]
+  before_action :item_information, only: [:show, :edit, :update]
 
   def index
     @items = Item.all.order("created_at DESC")
@@ -23,6 +23,14 @@ class ItemsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      render :show
+    else
+      render :edit
+    end
   end
 
   private
