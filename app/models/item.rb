@@ -18,4 +18,11 @@ has_one :address
 has_one :purchase, class_name: 'Purchase'
 has_one_attached :image
 
+extend ActiveHash::Associations::ActiveRecordExtensions
+belongs_to_active_hash :category
+belongs_to_active_hash :item_condition
+belongs_to_active_hash :shipping_fee
+belongs_to_active_hash :shipping_place
+belongs_to_active_hash :shipping_days
+
 end
