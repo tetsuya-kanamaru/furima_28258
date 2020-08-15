@@ -8,7 +8,6 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(transaction_params)
-    binding.pry
     if @transaction.valid?
       # @trasaction.errors.messages
       purchase
@@ -45,7 +44,6 @@ class TransactionsController < ApplicationController
 
   def purchase
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
-    binding.pry
     Payjp::Charge.create(
       amount: @item.price,
       card: params[:token],
