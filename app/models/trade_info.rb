@@ -1,5 +1,5 @@
-class Transaction < ApplicationRecord
-  
+class TradeInfo < ApplicationRecord
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 
@@ -13,5 +13,5 @@ class Transaction < ApplicationRecord
 
   belongs_to :item
   belongs_to :user
-
+  
 end
