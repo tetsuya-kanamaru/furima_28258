@@ -37,6 +37,12 @@ class TransactionsController < ApplicationController
     @item = Item.find(params[:item_id])
   end
 
+  def move_to_root
+    if current_user.id == @item.user_id || @item.deal.present?
+      redirect_to root_path
+    end
+  end
+
   def purchase
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
     binding.pry
