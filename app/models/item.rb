@@ -14,7 +14,7 @@ end
 
 belongs_to :user
 has_many :comments
-has_one :address
+has_one :trade_info
 has_one :deal, class_name: 'TradeInfo'
 has_one_attached :image
 
