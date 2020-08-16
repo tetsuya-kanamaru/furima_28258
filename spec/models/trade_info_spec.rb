@@ -10,6 +10,12 @@ RSpec.describe TradeInfo, type: :model do
       expect(@trade).to be_valid
     end
 
+    it "postal_codeが[3桁-4桁]であれば登録できること" do
+      @trade.postal_code = '123-4567'
+      @trade.valid?
+      expect(@trade.postal_code).to be_valid
+    end
+
     it "postal_codeが空では登録できないこと" do
       @trade.postal_code = nil
       @trade.valid?
@@ -51,6 +57,12 @@ RSpec.describe TradeInfo, type: :model do
       @trade.house_number = 'Abcde Fghijk'
       @trade.valid?
       expect(@trade.errors.full_messages).to include("House number is invalid")
+    end
+
+    it "phone_numberが11桁であれば登録できること" do
+      @trade.phone_number = '09012345678'
+      @trade.valid?
+      expect(@trade).to be_valid
     end
 
     it "phone_numberが空では登録できないこと" do
