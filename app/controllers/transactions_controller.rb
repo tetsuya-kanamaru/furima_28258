@@ -20,7 +20,7 @@ class TransactionsController < ApplicationController
   private
 
   def trade_params
-    params.permit(:postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number,:item_id).merge(user_id: current_user.id).merge(price: @item.price)
+    params.permit(:postal_code, :prefecture_id, :city, :house_number, :building_name, :phone_number, :item_id).merge(user_id: current_user.id).merge(price: @item.price)
   end
 
   def move_to_login
